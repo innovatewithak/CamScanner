@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardPreviewActivity"
+    android:background="#000">
+
+    <vn.nano.photocropper.CropImageView
+        android:id="@+id/previewImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/previewBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="#353434"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/leftRotate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Left"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_rotate_left"/>
+
+        <TextView
+            android:id="@+id/rightRotate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_rotate_right"/>
+
+        <TextView
+            android:id="@+id/nextBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_arrow_forward"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

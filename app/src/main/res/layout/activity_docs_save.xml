@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DocsSaveActivity"
+    android:id="@+id/rootView"
+    android:background="#000">
+
+    <LinearLayout
+        android:id="@+id/previewBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="#353434"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/shareBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/saveBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_save"/>
+
+
+    </LinearLayout>
+
+    <ja.burhanrashid52.photoeditor.PhotoEditorView
+        android:id="@+id/croppedImage"
+        android:layout_below="@+id/previewBottomMenu"
+        android:layout_above="@+id/rvFilterView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFilterView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tool_bg"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_filter_view"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

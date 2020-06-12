@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/documentImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="fitXY"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/documentName"
+        android:layout_toEndOf="@+id/documentImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/documentDate"
+        android:layout_toEndOf="@+id/documentImage"
+        android:layout_below="@+id/documentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="2020/06/09 13:13"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/documentCount"
+        android:layout_toEndOf="@+id/documentDate"
+        android:layout_below="@+id/documentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:background="@drawable/white_grey_border2"
+        android:layout_marginStart="10dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"/>
+
+</RelativeLayout>

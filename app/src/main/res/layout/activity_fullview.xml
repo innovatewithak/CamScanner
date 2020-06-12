@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullviewActivity"
+    android:background="#000">
+
+    <ImageView
+        android:id="@+id/fullPreview"
+        android:layout_below="@+id/previewBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_launcher_background"/>
+
+    <LinearLayout
+        android:id="@+id/previewBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="#353434"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/createPdf"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Save PDF"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_picture_as_pdf"/>
+
+        <TextView
+            android:id="@+id/shareBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_share"/>
+
+        <TextView
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_delete"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
