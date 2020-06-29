@@ -25,6 +25,7 @@ public class CameraActivity extends AppCompatActivity {
     private ImageView captureBtn;
     private ImageView flashOn;
     boolean flash = false;
+    Camera.Parameters params;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,24 @@ public class CameraActivity extends AppCompatActivity {
         mCamera = getCameraInstance();
         applicationPreference = SpInstance.getInstance(CameraActivity.this);
 
-        final Camera.Parameters params = mCamera.getParameters();
+        
+        // Create an instance of Camera
+        mCamera = getCameraInstance();
+        applicationPreference = SpInstance.getInstance(CameraActivity.this);
+
+        params = mCamera.getParameters();
+        if (params.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+        } else {
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+        }
+        params.set("iso", "auto");
+        params.set("contrast", 100);
+        params.set("brightness", 50);
+        params.set("saturation", 100);
+        params.set("sharpness", 100);
+        params.setAntibanding("auto");
+        mCamera.setParameters(params);
 
         // Create our Preview view and set it as the content of our activity.
         mPreview = new CameraPreview(this, mCamera);
@@ -44,12 +62,24 @@ public class CameraActivity extends AppCompatActivity {
 
         flashOn = (ImageView) findViewById(R.id.flashOn);
 
+
         preview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // set the focus mode
                 params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
                 // set Camera parameters
+                if (params.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+                    params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+                } else {
+                    params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+                }
+                params.set("iso", "auto");
+                params.set("contrast", 100);
+                params.set("brightness", 50);
+                params.set("saturation", 100);
+                params.set("sharpness", 100);
+                params.setAntibanding("auto");
                 mCamera.setParameters(params);
             }
         });
